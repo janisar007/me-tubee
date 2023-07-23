@@ -1,0 +1,74 @@
+@import '../../base.scss';
+
+.sidebar {
+    background: $black-secondary;
+
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 90vh;
+    padding-top: 2rem;
+
+    li {
+        display: flex;
+        align-items: center;
+
+        padding: 0.6rem 1.5rem;
+        margin: 0.2rem 0rem;
+        cursor: pointer;
+
+        span {
+            margin-left: 1rem;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.4px;
+        }
+
+        // border: 1px solid red;
+
+        &:hover {
+            background-color: $border-color;
+        }
+    }
+
+    hr {
+        background-color: $border-color;
+    }
+
+    
+    &.open { //&.means element can have open and sidebar both the classes.
+        // display: block;
+        //diplay ki jagah per hum transform ka use kar sakte hai isse transition bhi laga sakenge.
+        transform: translateX(0%);
+
+    }
+}
+
+@media(max-width:$breakpoint-medium) {
+    .sidebar {
+        width: 90px;
+
+        li {
+            justify-content: center;
+
+            span {
+                display: none;
+            }
+        }
+    }
+    
+}
+
+@media(max-width:$breakpoint-small) {
+    .sidebar {
+        // display: none;
+        //diplay ki jagah per hum transform ka use kar sakte hai isse transition bhi laga sakenge.
+        transform: translateX(-100%);
+
+        transition: transform 0.2s ease-in;
+
+        position: fixed; //isse home screen ne sidebar ki jagah le li. 
+        z-index: 1; //isse bas sidebar ka color dark raega jo ki tha hi.
+    
+    }
+}
