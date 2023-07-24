@@ -1,8 +1,15 @@
 import { LOAD_PROFILE, LOGIN_FAIL, LOGIN_REQUEST, LOGIN_SUCCESS } from "../actionType";
 
+// const initialState = {
+//     accessToken: null, //agar ye token nahi hai to user is not autherized. ye token google se login per milta hai. which is stored in an object (res) in auth.action.jsx.
+//     user: null,
+//     loading: false
+// }
+//after applying sessionStorage->
 const initialState = {
-    accessToken: null, //agar ye token nahi hai to user is not autherized. ye token google se login per milta hai. which is stored in an object (res) in auth.action.jsx.
-    user: null,
+    //this sessionStorages are defined in auth.action.jsx. it is used to keep the page there after reload else after reload we lost acessToken and we are redirected to login page.
+    accessToken: sessionStorage.getItem('meTube-access-token')?sessionStorage.getItem('meTube-access-token'):null,
+    user: sessionStorage.getItem('meTube-user')?JSON.parse(sessionStorage.getItem('meTube-user')):null,
     loading: false
 }
 
