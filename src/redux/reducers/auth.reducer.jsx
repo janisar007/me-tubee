@@ -1,4 +1,4 @@
-import { LOAD_PROFILE, LOGIN_FAIL, LOGIN_REQUEST, LOGIN_SUCCESS } from "../actionType";
+import { LOAD_PROFILE, LOGIN_FAIL, LOGIN_REQUEST, LOGIN_SUCCESS, LOG_OUT } from "../actionType";
 
 // const initialState = {
 //     accessToken: null, //agar ye token nahi hai to user is not autherized. ye token google se login per milta hai. which is stored in an object (res) in auth.action.jsx.
@@ -44,6 +44,13 @@ export const authReducer = (prevState = initialState, action) => {
             return {
                 ...prevState,
                 user: payload //user should be updated with payload.
+            }
+
+        case LOG_OUT: //handling user
+            return {
+                ...prevState,
+                accessToken: null,
+                user: null
             }
     
         default:

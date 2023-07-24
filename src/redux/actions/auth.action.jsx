@@ -1,6 +1,6 @@
 import firebase from 'firebase/compat/app'
 import auth from '../../firebase'
-import { LOAD_PROFILE, LOGIN_FAIL, LOGIN_REQUEST, LOGIN_SUCCESS } from '../actionType';
+import { LOAD_PROFILE, LOGIN_FAIL, LOGIN_REQUEST, LOGIN_SUCCESS, LOG_OUT } from '../actionType';
 
 //we are going to dispath this login action creater from our LoginScreen.
 export const login = () => { //creting an action.
@@ -52,5 +52,21 @@ export const login = () => { //creting an action.
                 
             }
         }
+    );
+}
+
+//2. action for logout button ->
+export const logout = () => {
+    return (
+       async dispatch => {
+        //using firebase it is very easy to log out ->
+        await auth.signOut();
+        dispatch({
+            type:LOG_OUT,
+        });
+
+        sessionStorage.removeItem('meTube-access-token');
+        sessionStorage.removeItem('meTube-user');
+       }
     );
 }
