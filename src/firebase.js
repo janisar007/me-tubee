@@ -1,6 +1,6 @@
-import firebase from 'firebase/app';
+import firebase from 'firebase/compat/app';
 
-import 'firebase/auth'; //after setting authentication in fb.
+import 'firebase/compat/auth'; //after setting authentication in fb.
 
 const firebaseConfig = {
     apiKey: "AIzaSyCvm8-lrS360nASo0ClmOqCZJWbou3L3-I",
