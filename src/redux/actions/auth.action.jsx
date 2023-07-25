@@ -13,6 +13,10 @@ export const login = () => { //creting an action.
                 });
 
                 const provider = new firebase.auth.GoogleAuthProvider(); //it will give the object.
+                //detail-3--------------------
+                //defining scope for -> See, edit, and permanently delete your YouTube videos, ratings, comments and captions
+                provider.addScope('https://www.googleapis.com/auth/youtube.force-ssl');
+                //3-------------------
 
                 //ab sign in method me is provider object pass krna hoga ->
                 const res = await auth.signInWithPopup(provider); //is res object k ander ek accessToken hoga jiska use reducer karega login karane me(see auth.reducer.jsx)

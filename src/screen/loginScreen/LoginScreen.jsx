@@ -13,7 +13,7 @@ const LoginScreen = () => {
 
     //Now after clicking the login button we suppose to get accessToken. so if accessToken is not null then we redirect the user to homeScreen ->
     //so we can get accessToken from store, and is stored in objet named auth(initialState)(seeauth.reducer) using useSelector Hook ->
-    const accessToken = useSelector(state => state.auth.accessToken); //state is just the object of golbal state in store.
+    const accessToken = useSelector(state => state.auth.accessToken); //state is just the object of golbal state in store. aur ye jo auth hai na wo store.jsx me reducer middleware me defined hai.
 
     const navigate = useNavigate(); //useHistory is use to redirect.
     useEffect(() => {

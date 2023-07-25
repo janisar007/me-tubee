@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './_catagoriesBar.scss';
-import { getValue } from '@testing-library/user-event/dist/utils';
+import { useDispatch } from 'react-redux';
+import { getVideosByCatagory } from '../../redux/actions/videos.action';
 
 const keywords= [
   'All',
@@ -25,8 +26,10 @@ const keywords= [
 function CatagoriesBar() {
   const [activeElement, setActiveElement] = useState('All');
 
+  const dispatch = useDispatch();
   const hanldeClick = (value) => {
     setActiveElement(value);
+    dispatch(getVideosByCatagory(value)); //ye baad me api call me joda hai.
   }
 
   return (

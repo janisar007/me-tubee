@@ -4,6 +4,7 @@ import {composeWithDevTools} from 'redux-devtools-extension'; //composewithdevto
 import thunk from 'redux-thunk'; //thunk is a middleware.
 
 import {authReducer} from './reducers/auth.reducer';
+import {homeVideosReducer} from './reducers/videos.reducer';
 
 // const initialState = {
 //     name: 'Sumit',
@@ -12,10 +13,11 @@ import {authReducer} from './reducers/auth.reducer';
 
 const rootReducer = combineReducers({ //combine reducer ka use bas saare reducers ko ek jagah rakhne k liye karte hai.
     auth: authReducer,
+    homeVideos: homeVideosReducer
 })
 
 const store = createStore(
-        rootReducer, 
+        rootReducer,
         /*initialState*/{}, 
         composeWithDevTools(applyMiddleware(thunk))
     );
