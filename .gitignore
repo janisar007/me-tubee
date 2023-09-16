@@ -6,7 +6,7 @@
 .pnp.js
 
 #env file ->
-/src/.env
+.env
 detail.txt
 
 # testing
