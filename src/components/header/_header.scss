@@ -10,6 +10,10 @@
     height: 10vh;
     width: 100%;
 
+    position: fixed; //refactor
+    top: 0; //refactor
+    z-index: 999;
+
     &__menu { //& parent(header) k sath __menu ko concatinate kar dega aur bana dega header__menu jo ki original className hai.
 
         //now is 3-baar logo ko hu smaller screen k liye show krna chahte hai to ise hum pahle hide kar denge aur media querry me show karenge->

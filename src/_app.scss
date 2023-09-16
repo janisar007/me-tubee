@@ -1,4 +1,11 @@
 .app__container {
     display: flex;
-    height: 90vh; //10 vh hum header ko set kar denge jisse 100 complete ho jaega.
+
+    //refactoring removal ->
+   // height: 90vh; //10 vh hum header ko set kar denge jisse 100 complete ho jaega.
+   margin-top: 10vh; //refactoring
 }
+//refactoring me hata diya ise->
+// .app__main { 
+//     overflow-y: scroll; //isse sidebar scroll ka hissa nahi banega
+// }
